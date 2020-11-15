@@ -1,7 +1,18 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { useRouter } from 'next/router';
 
 export default function Home() {
+
+  const router = useRouter();
+
+  const voteKatie = () => {
+    router.push({
+      pathname: "/vote",
+      query: {user: 'katie'}
+    });
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,8 +25,12 @@ export default function Home() {
           Castleboy <a href="/">Come Dine with us!</a>
         </h1>
 
+        <p className={styles.description}>
+        Vote here
+        </p>
+
         <div className={styles.grid}>
-          <div className={styles.card}>
+          <div className={styles.card} onClick={voteKatie}>
             <h3>Katie &rarr;</h3>
           </div>
 
