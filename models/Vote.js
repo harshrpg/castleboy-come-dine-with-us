@@ -25,7 +25,7 @@ const VotingSchema = new mongoose.Schema({
          */
 
          type: Number,
-         required: [true, 'Please provide the color of the avatar'],
+         required: [true, 'Please provide the score'],
     },
 });
 

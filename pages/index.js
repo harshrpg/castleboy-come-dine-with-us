@@ -6,10 +6,10 @@ export default function Home() {
 
   const router = useRouter();
 
-  const voteKatie = () => {
+  const vote = (userName) => {
     router.push({
       pathname: "/vote",
-      query: {user: 'katie'}
+      query: {user: userName}
     });
   }
 
@@ -30,28 +30,32 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <div className={styles.card} onClick={voteKatie}>
+          <div className={styles.card} onClick={() => vote("Katie")}>
             <h3>Katie &rarr;</h3>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => vote("John")}>
             <h3>John &rarr;</h3>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => vote("Jack")}>
             <h3>Jack &rarr;</h3>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => vote("Harsh")}>
             <h3>Harsh &rarr;</h3>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => vote("Shauna")}>
             <h3>Shauna &rarr;</h3>
           </div>
 
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => vote("Karen")}>
             <h3>Karen &rarr;</h3>
+          </div>
+
+          <div className={styles.card} onClick={() => vote("Shane & Aishling")}>
+            <h3>Shane and Aishling &rarr;</h3>
           </div>
         </div>
       </main>
